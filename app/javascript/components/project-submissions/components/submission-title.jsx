@@ -1,14 +1,11 @@
-import React from 'react';
-import { object, bool } from 'prop-types';
+import React from "react";
+import { object, bool } from "prop-types";
 
-const SubmissionTitle = ({ submission, isDashboardView, isCurrentUsersSubmission }) => {
+const SubmissionTitle = ({ submission, isDashboardView }) => {
   if (isDashboardView) {
-    return <a href={submission.lesson_path}>{ submission.lesson_title }</a>;
+    return <a href={submission.lesson_path}>{submission.lesson_title}</a>;
   }
-  if (isCurrentUsersSubmission) {
-    return <a href="/">{submission.user_name}</a>;
-  }
-  return submission.user_name;
+  return <a href="/">{submission.user_name}</a>;
 };
 
 SubmissionTitle.defaultProps = {
